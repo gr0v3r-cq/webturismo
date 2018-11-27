@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+/* SweetAlert2 */
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 /* NgbModule */
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -41,6 +43,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     RoutingModule,
     PageAdminModule,
     NgbModule,
+    HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
