@@ -23,8 +23,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeadertopComponent } from './components/header/headertop/headertop.component';
 import { NavvarComponent } from './components/header/navvar/navvar.component';
 import { SliderComponent } from './components/slider/slider.component';
-import { PageLoginComponent } from './page-login/page-login.component';
+import { PageLoginComponent } from './login/page-login/page-login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+
+//servicios - estaticos 
+import { CityService } from './services_statics/city-service';
+
+
 
 @NgModule({
   declarations: [
@@ -48,7 +53,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ReactiveFormsModule,
     SweetAlert2Module.forRoot()
   ],
-  providers: [],
+  providers: [
+    CityService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

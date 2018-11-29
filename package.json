@@ -23,7 +23,9 @@
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@toverux/ngx-sweetalert2": "^4.0.0",
     "core-js": "^2.5.4",
+    "md5-typescript": "^1.0.5",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.3.2",
     "sweetalert2": "^7.29.2",
     "zone.js": "^0.8.26"
   },

@@ -12,8 +12,8 @@
 		<div class="row d-flex align-items-center justify-content-center">
 			<div class="about-content col-lg-12">
 				<h1 class="text-white">
-						
-							
+
+
 				</h1>
 			</div>	
 		</div>
@@ -30,16 +30,16 @@
 				<div class="col-lg-6 col-md-6 mt-sm-30 element-wrap">
 					<div class="single-element-widget">
 						<h3 class="mb-30">Login</h3>
-						<form action="#">
+						<form #userLogin="ngForm" (ngSubmit)="loginUser(userLogin.value);" autocomplete="off">
 							<div class="mt-10">
-								<input type="text" name="user_name" placeholder="User Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'User Name'" required class="single-input bordinput">
+								<input type="text" name="user_name_login"  id="user_name_login"  ngModel placeholder="User Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'User Name'" required class="single-input bordinput">
 							</div>
 							<div class="mt-10">
-								<input type="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="single-input bordinput">
+								<input type="password" name="password_login" id="password_login"  ngModel placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="single-input bordinput">
 							</div>
 							<div class="button-group-area mt-40 text-center">
-								<a href="#" class="genric-btn col-lg-5 danger circle">Cancel</a>
-								<a href="#" class="genric-btn col-lg-5 primary circle">Logim</a>
+								<button type="button" class="genric-btn col-lg-5 danger circle" (click)="cancellogin()">Cancel</button>
+								<button type="submit" class="genric-btn col-lg-5 primary circle">Login</button>
 							</div>
 							<div class="button-group-area mt-40 text-center">
 								<a href="#" class="genric-btn col-lg-3 color-facebook circle"><span class="fa fa-facebook"></span> Facebook</a>
@@ -84,7 +84,7 @@
 							<input type="date" name="birth" id="birth"  ngModel placeholder="Bangladeshirth date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Bangladeshirth date'" required class="single-input bordinput lmp-camp">
 						</div>
 						<div class="button-group-area mt-40 text-center">
-							<button type="button" class="genric-btn col-lg-5 danger circle">Cancel</button>
+							<button type="button" class="genric-btn col-lg-5 danger circle" (click)="cancellogin()">Cancel</button>
 							<button type="submit" class="genric-btn col-lg-5 primary circle">Register</button>
 						</div>
 					</form>

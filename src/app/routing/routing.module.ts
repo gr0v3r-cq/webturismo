@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageHomeComponent } from '../pageExternal/page-home/page-home.component';
 import { PageAdminComponent } from '../page-admin/page-admin.component';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
-import { PageLoginComponent } from '../page-login/page-login.component';
+import { PageLoginComponent } from '../login/page-login/page-login.component';
 
 
 const routes: Routes = [
