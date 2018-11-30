@@ -58,7 +58,26 @@ export class PageLoginComponent implements OnInit {
 		this.httpservicio.sp_loginuser(aux)
 		.subscribe(
 			(data) => {
-				if (data != '[{ }]') {
+				if (JSON.stringify(data) !== '[{ }]') {
+
+					localStorage.setItem('currentUser', JSON.stringify(data));
+					var session = data[0].xprs_data;
+					localStorage.setItem('first_name', session[0].first_name);
+					localStorage.setItem('last_name', session[0].);
+					localStorage.setItem('user_name', session[0].);
+					localStorage.setItem('emal', session[0].);
+					localStorage.setItem('pais', session[0].);
+					localStorage.setItem('phone', session[0].);
+					localStorage.setItem('birtday', session[0].);
+
+
+				}else{
+					swal('Users',
+						'the user was not found',
+						'warning');
+					this.cleaninputs();
+				}
+				/*if (data.length > 0) {
 					console.log(data ,1111111111);
 					localStorage.setItem('currentUser', JSON.stringify(data));
 					
@@ -68,7 +87,7 @@ export class PageLoginComponent implements OnInit {
 						'the user was not found',
 						'warning');
 					this.cleaninputs();
-				}
+				}*/
 			},error => {
 				swal('Error',
 					'there was some mistake',
