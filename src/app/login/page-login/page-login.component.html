@@ -32,10 +32,10 @@
 						<h3 class="mb-30">Login</h3>
 						<form #userLogin="ngForm" (ngSubmit)="loginUser(userLogin.value);" autocomplete="off">
 							<div class="mt-10">
-								<input type="text" name="user_name_login"  id="user_name_login"  ngModel placeholder="User Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'User Name'" required class="single-input bordinput">
+								<input type="text" name="user_name_login"  id="user_name_login"  ngModel placeholder="User Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'User Name'" required class="lmp-camp single-input bordinput">
 							</div>
 							<div class="mt-10">
-								<input type="password" name="password_login" id="password_login"  ngModel placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="single-input bordinput">
+								<input type="password" name="password_login" id="password_login"  ngModel placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="lmp-camp single-input bordinput">
 							</div>
 							<div class="button-group-area mt-40 text-center">
 								<button type="button" class="genric-btn col-lg-5 danger circle" (click)="cancellogin()">Cancel</button>

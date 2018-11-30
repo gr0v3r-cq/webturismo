@@ -17,7 +17,7 @@ export class PageAdminComponent implements OnInit {
 		this.showApp();
 	}
 
-	showApp (): void {
+	showApp(): void {
 		this.router.navigate(['/admin', {outlets: {'firstchild': ['dashboard']}}]);
 	}
 }

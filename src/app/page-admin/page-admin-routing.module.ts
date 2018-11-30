@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+/* pages */
 import { PageAdminComponent } from './page-admin.component';
 import { PageDashboardComponent } from './page-dashboard/page-dashboard.component';
 
@@ -9,7 +10,7 @@ import { PageDashboardComponent } from './page-dashboard/page-dashboard.componen
 const routes: Routes = [
 	{ path: 'admin', component: PageAdminComponent,
 		children: [
-			{	path: 'dashboard', component: PageDashboardComponent, outlet: 'firstchild'}
+			{ path: 'dashboard', component: PageDashboardComponent, outlet: 'firstchild' }
 		]
 	}
 ];

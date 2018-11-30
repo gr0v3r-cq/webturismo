@@ -10,7 +10,7 @@ import { PageLoginComponent } from '../login/page-login/page-login.component';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '', redirectTo: '/admin', pathMatch: 'full' },
     { path: 'home', component: PageHomeComponent },
     { path: 'admin', component: PageAdminComponent },
     { path: 'login', component: PageLoginComponent },
