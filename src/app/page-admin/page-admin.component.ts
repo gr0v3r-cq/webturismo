@@ -10,7 +10,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class PageAdminComponent implements OnInit {
 
 	constructor(
-			private router: Router
+		private router: Router
 		) { }
 
 	ngOnInit() {
@@ -18,6 +18,13 @@ export class PageAdminComponent implements OnInit {
 	}
 
 	showApp(): void {
-		this.router.navigate(['/admin', {outlets: {'firstchild': ['dashboard']}}]);
+		//this.router.navigate(['/admin', {outlets: {'firstchild': ['dashboard']}}]);
+		/*this.router.navigate(['/admin', {outlets: {'firstchild': ['tablero']}}]);*/
+		this.router.navigate(['/admin', {outlets: {'firstchild': ['tablero']}}]).then(nav => {
+			console.log(nav); // true if navigation is successful
+
+		}, err => {
+			console.log(err) // when there's an error
+		});
 	}
 }

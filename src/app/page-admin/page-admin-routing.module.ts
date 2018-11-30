@@ -9,10 +9,10 @@ import { PageDashboardComponent } from './page-dashboard/page-dashboard.componen
 
 const routes: Routes = [
 	{ path: 'admin', component: PageAdminComponent,
-		children: [
-			{ path: 'dashboard', component: PageDashboardComponent, outlet: 'firstchild' }
-		]
-	}
+      children: [
+        { path: 'tablero1', component: PageDashboardComponent, outlet: 'firstchild' }
+      ]
+    }
 ];
 
 @NgModule({

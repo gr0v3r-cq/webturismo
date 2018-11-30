@@ -11,9 +11,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 /* routing */
 import { RoutingModule } from './routing/routing.module';
-
+  
 /* modules */
 import { PageAdminModule } from './page-admin/page-admin.module';
+
 
 /* pages */
 import { AppComponent } from './app.component';
@@ -26,9 +27,10 @@ import { SliderComponent } from './components/slider/slider.component';
 import { PageLoginComponent } from './login/page-login/page-login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
+
 //servicios - estaticos 
 import { CityService } from './services_statics/city-service';
-
+import { AuthGuard } from './login/_guards/index';
 
 
 @NgModule({
@@ -54,7 +56,8 @@ import { CityService } from './services_statics/city-service';
     SweetAlert2Module.forRoot()
   ],
   providers: [
-    CityService
+    CityService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

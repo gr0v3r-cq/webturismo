@@ -15,7 +15,9 @@ declare var $ : any;
 	styleUrls: ['./page-login.component.css']
 })
 export class PageLoginComponent implements OnInit {
+	
 	public city : any;
+
 	constructor(
 		public httpservicio: DataServicieService,
 		public cityService: CityService,
@@ -60,6 +62,7 @@ export class PageLoginComponent implements OnInit {
 			(data) => {
 				if (data[0].xusr_id) {
 					localStorage.setItem('currentUser', JSON.stringify(data));
+					localStorage.setItem('usr_rol_id', data[0].xusr_rol_id);
 					var session = JSON.parse(data[0].xprs_data);
 					localStorage.setItem('first_name', session.first_name);
 					localStorage.setItem('last_name', session.last_name);

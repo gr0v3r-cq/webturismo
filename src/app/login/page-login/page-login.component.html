@@ -30,58 +30,59 @@
 				<div class="col-lg-6 col-md-6 mt-sm-30 element-wrap">
 					<div class="single-element-widget">
 						<h3 class="mb-30">Login</h3>
-						<form #userLogin="ngForm" (ngSubmit)="loginUser(userLogin.value);" autocomplete="off">
+						<form #userLogin="ngForm" (ngSubmit)="loginUser(userLogin.value);">
 							<div class="mt-10">
-								<input type="text" name="user_name_login"  id="user_name_login"  ngModel placeholder="User Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'User Name'" required class="lmp-camp single-input bordinput">
+								<input type="text" name="user_name_login"  id="user_name_login"  ngModel placeholder="User Name" required class="lmp-camp single-input bordinput">
 							</div>
 							<div class="mt-10">
-								<input type="password" name="password_login" id="password_login"  ngModel placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="lmp-camp single-input bordinput">
+								<input type="password" name="password_login" id="password_login"  ngModel placeholder="Password" required class="lmp-camp single-input bordinput">
 							</div>
 							<div class="button-group-area mt-40 text-center">
 								<button type="button" class="genric-btn col-lg-5 danger circle" (click)="cancellogin()">Cancel</button>
 								<button type="submit" class="genric-btn col-lg-5 primary circle">Login</button>
 							</div>
-							<div class="button-group-area mt-40 text-center">
+							<!-- <div class="button-group-area mt-40 text-center">
 								<a href="#" class="genric-btn col-lg-3 color-facebook circle"><span class="fa fa-facebook"></span> Facebook</a>
-
 								<a href="#" class="genric-btn col-lg-3 danger circle"><span class="fa fa-google"></span>Google+</a>
 								<a href="#" class="genric-btn col-lg-3 success circle"><span class="fa fa-twitter"></span>Twitter</a>
-							</div>
+							</div> -->
 						</form>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<h3 class="mb-30">Sign in</h3>
-					<form #userRegister="ngForm" (ngSubmit)="registerUser(userRegister.value);" autocomplete="off">
+					<form #userRegister="ngForm" (ngSubmit)="registerUser(userRegister.value);" autocomplete="off" novalidate >
 						<div class="mt-10">
-							<input type="text" name="first_name"  id="first_name"  ngModel placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" required class="single-input bordinput lmp-camp" >
+							<input type="text" name="first_name"  id="first_name"  ngModel placeholder="First Name *" required class="single-input bordinput lmp-camp">
 						</div>
 						<div class="mt-10">
-							<input type="text" name="last_name" id="last_name"  ngModel placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required class="single-input bordinput lmp-camp">
+							<input type="text" name="last_name" id="last_name"  ngModel placeholder="Last Name *" required class="single-input bordinput lmp-camp">
 						</div>
 						<div class="mt-10">
-							<input type="text" name="user_name" id="user_name"  ngModel placeholder="User Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'User Name'" required class="single-input bordinput lmp-camp">
+							<input type="text" name="user_name" id="user_name"  ngModel placeholder="User Name *" required class="single-input bordinput lmp-camp">
 						</div>
 						<div class="mt-10">
-							<input type="email" name="EMAIL" id="EMAIL"  ngModel placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required class="single-input bordinput lmp-camp">
+							<input type="email" name="EMAIL" id="EMAIL"  ngModel placeholder="Email address *" required class="single-input bordinput lmp-camp">
 						</div>
 						<div class="mt-10">
-							<input type="password" name="password" id="password"  ngModel placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="single-input bordinput lmp-camp">
+							<input type="password" name="password" id="password"  ngModel placeholder="Password *" required class="single-input bordinput lmp-camp">
 						</div>
 						<div class="mt-10">
-							<input type="password" name="password_repit" id="password_repit"  ngModel placeholder="Confirm Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirm Password'" required class="single-input bordinput lmp-camp">
+							<input type="password" name="password_repit" id="password_repit"  ngModel placeholder="Confirm Password *" required class="single-input bordinput lmp-camp">
 						</div>
 						<div class="input-group-icon mt-10 ">
+							<label for="bday">Escriba su pais:</label>
 							<select id="city" name="city" ngModel class="form-control bordinput lmp-camp">
 								<option selected value="0">seleccione una opcion</option>
 								<option *ngFor="let c of city" [ngValue]="c">{{c.name}}</option>
 							</select>
 						</div>
 						<div class="mt-10">
-							<input type="number" name="phone" id="phone"  ngModel placeholder="Phone" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone'" required class="single-input bordinput lmp-camp">
+							<input type="number" name="phone" id="phone"  ngModel placeholder="Phone" required class="single-input bordinput lmp-camp">
 						</div>
 						<div class="mt-10">
-							<input type="date" name="birth" id="birth"  ngModel placeholder="Bangladeshirth date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Bangladeshirth date'" required class="single-input bordinput lmp-camp">
+							<label for="bday">Escriba su cumpleaños:</label>
+							<input type="date" name="birth" id="birth"  ngModel placeholder="Bangladeshirth date" required class="single-input bordinput lmp-camp">
 						</div>
 						<div class="button-group-area mt-40 text-center">
 							<button type="button" class="genric-btn col-lg-5 danger circle" (click)="cancellogin()">Cancel</button>

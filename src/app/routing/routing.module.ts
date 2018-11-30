@@ -8,11 +8,21 @@ import { PageAdminComponent } from '../page-admin/page-admin.component';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { PageLoginComponent } from '../login/page-login/page-login.component';
 
+/* page children */
+import { PageDashboardComponent } from '../page-admin/page-dashboard/page-dashboard.component';
+
+/* AuthGuard */
+import { AuthGuard } from '../login/_guards/index';
+
 
 const routes: Routes = [
     { path: '', redirectTo: '/admin', pathMatch: 'full' },
     { path: 'home', component: PageHomeComponent },
-    { path: 'admin', component: PageAdminComponent },
+    { path: 'admin', component: PageAdminComponent,
+      children: [
+        { path: 'tablero', component: PageDashboardComponent, outlet: 'firstchild', canActivate: [AuthGuard] }
+      ]
+    },
     { path: 'login', component: PageLoginComponent },
     { path: '**', component: NotFoundComponent }
 ];

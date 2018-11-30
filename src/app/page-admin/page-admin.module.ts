@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-/* page */
+
+/* module */
 import { PageAdminRoutingModule } from './page-admin-routing.module';
+
+/* page */
 import { PageDashboardComponent } from './page-dashboard/page-dashboard.component';
 
 
