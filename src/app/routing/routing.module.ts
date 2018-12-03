@@ -16,7 +16,7 @@ import { AuthGuard } from '../login/_guards/index';
 
 
 const routes: Routes = [
-    { path: '', redirectTo: '/admin', pathMatch: 'full' },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'home', component: PageHomeComponent },
     { path: 'admin', component: PageAdminComponent,
       children: [

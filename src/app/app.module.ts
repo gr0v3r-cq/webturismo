@@ -26,11 +26,13 @@ import { NavvarComponent } from './components/header/navvar/navvar.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { PageLoginComponent } from './login/page-login/page-login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-
+import { NavadminComponent } from './components/header/navadmin/navadmin.component';
 
 //servicios - estaticos 
 import { CityService } from './services_statics/city-service';
 import { AuthGuard } from './login/_guards/index';
+import { NavleftadminComponent } from './components/header/navleftadmin/navleftadmin.component';
+
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { AuthGuard } from './login/_guards/index';
     NavvarComponent,
     SliderComponent,
     PageLoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NavadminComponent,
+    NavleftadminComponent
   ],
   imports: [
     BrowserModule,
