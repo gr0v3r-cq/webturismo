@@ -50,6 +50,14 @@ export class DataServicieService {
             .catch(this.handleError);
     }
 
+     /*-------  listar Naturaleza -------*/
+    public sp_list_naturaleza(data:any): Observable<any[]> {
+        const body = { identificador: 'TUR-OBT-NATURALEZA-261', parametros: JSON.stringify(data)};
+        return this.http.post(this.url_webservice_motor, body,this.jwt())
+        .map(this.extractProcess)
+        .catch(this.handleError);
+    }
+
     /*----------------- funciones para servicios ------------------*/
     private extractProcess (res: Response) {
   		const body = res.json();
