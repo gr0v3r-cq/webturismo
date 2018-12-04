@@ -7,6 +7,7 @@ import { PageHomeComponent } from '../pageExternal/page-home/page-home.component
 import { PageAdminComponent } from '../page-admin/page-admin.component';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { PageLoginComponent } from '../login/page-login/page-login.component';
+import { PageUniqueplacesComponent } from '../pageExternal/page-uniqueplaces/page-uniqueplaces.component';
 
 /* page children */
 import { PageDashboardComponent } from '../page-admin/page-dashboard/page-dashboard.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
         { path: 'tablero', component: PageDashboardComponent, outlet: 'firstchild', canActivate: [AuthGuard] }
       ]
     },
+    { path: 'UniquePlacea', component: PageUniqueplacesComponent },
     { path: 'login', component: PageLoginComponent },
     { path: '**', component: NotFoundComponent }
 ];

@@ -27,11 +27,13 @@ import { SliderComponent } from './components/slider/slider.component';
 import { PageLoginComponent } from './login/page-login/page-login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavadminComponent } from './components/header/navadmin/navadmin.component';
+import { NavActivitisComponent } from './components/header/nav-activitis/nav-activitis.component';
 
 //servicios - estaticos 
 import { CityService } from './services_statics/city-service';
 import { AuthGuard } from './login/_guards/index';
 import { NavleftadminComponent } from './components/header/navleftadmin/navleftadmin.component';
+import { PageUniqueplacesComponent } from './pageExternal/page-uniqueplaces/page-uniqueplaces.component';
 
 
 
@@ -47,7 +49,9 @@ import { NavleftadminComponent } from './components/header/navleftadmin/navlefta
     PageLoginComponent,
     NotFoundComponent,
     NavadminComponent,
-    NavleftadminComponent
+    NavleftadminComponent,
+    PageUniqueplacesComponent,
+    NavActivitisComponent
   ],
   imports: [
     BrowserModule,

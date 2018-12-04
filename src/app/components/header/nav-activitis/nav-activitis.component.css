@@ -1,0 +1,25 @@
+#event a:hover {
+	text-align: center;
+	background-color: #fd0040;
+	cursor:default;
+}
+
+#video a:hover {
+	background-color: #ff9100;
+	cursor:default;
+}
+
+#download a:hover {
+	background-color: #00bebd;
+	cursor:default;
+}
+
+#ally a:hover {
+	background-color: #ad0070;
+	cursor:default;
+}
+
+#contact a:hover {
+	background-color: #4d7ce6;
+	cursor:default;
+}

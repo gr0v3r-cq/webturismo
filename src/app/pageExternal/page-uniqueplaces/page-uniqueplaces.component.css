@@ -1,0 +1,34 @@
+.bordinput{
+	border: 1px solid #f8b600;
+}
+.color-facebook{
+	background: #3b5998;
+	color: #fff;
+}
+.color-facebook:hover{
+	background: #fff;
+	border: 1px solid #3b5998;
+	color: #3b5998;
+}
+
+.selectlanguage {
+	background: transparent;
+	background-color: transparent;
+	color: #fff;
+	border: none;
+	font-size: 14px;
+	height: 30px;
+	padding: 5px;
+}
+
+
+.selectlanguage option {
+  background: #aba0a6;
+  
+}
+
+.selectlanguage:focus{ outline: none;}
+
+.linevist{
+	width: 1px;
+}

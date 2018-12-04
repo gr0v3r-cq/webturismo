@@ -1,0 +1,129 @@
+<!--header -->
+<header id="header">
+	<app-headertop></app-headertop>
+	<app-navvar></app-navvar>
+</header>
+<!-- #header -->
+
+<!-- start banner Area -->
+<section class="about-banner relative">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">				
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="about-content col-lg-12">
+				<h1 class="text-white">
+					Lugares Unicos
+				</h1>
+			</div>	
+		</div>
+	</div>
+</section>
+<!-- End banner Area -->
+
+<select [(ngModel)]="model.category" (change)="onChangeCategorySelect($event)" name="category" class="form-control" required>
+    <option value="default">Select category</option>
+    <option value="add">Add new category</option>
+</select>
+
+<!-- Start section select places -->
+<div class="whole-wrap">
+	<div class="container">
+		<div class="section-top-border">
+			<h3 class="mb-30">Lugares unicos</h3>
+			<div class="row">
+				<div class="col-md-9">
+					
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input-group-icon mt-10">
+								<div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+								<div class="form-select" id="default-select">
+									
+									<select (ngModelChange)="selectChangeHandler($event)">
+										<option value="1" (click)="saludar();">City</option>
+										<option value="2">Dhaka</option>
+										<option value="3">Dilli</option>
+										<option value="4">Newyork</option>
+										<option value="5">Islamabad</option>
+									</select>
+								</div>
+							</div>
+
+							<!-- Start table activitis -->
+
+							<!-- Start price Area -->
+							<section class="price-area" style="margin: 2% auto auto auto;">
+								<div class="container">						
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="single-price">
+
+												<ul class="price-list">
+													<li class="d-flex justify-content-between align-items-center" style="cursor: pointer" (click)="activiti();">
+														<span>Cheap Packages</span>
+													</li>
+													<hr>
+													<li class="d-flex justify-content-between align-items-center">
+														<span><h4>Cheap Packages</h4></span>
+													</li>
+													<li class="d-flex justify-content-between align-items-center">
+														<span><h4>Cheap Packages</h4></span>
+													</li>
+													<li class="d-flex justify-content-between align-items-center">
+														<span><h4>Cheap Packages</h4></span>
+													</li>
+													<li class="d-flex justify-content-between align-items-center">
+														<span><h4>Cheap Packages</h4></span>
+													</li>	
+													<li class="d-flex justify-content-between align-items-center">
+														<span><h4>Cheap Packages</h4></span>
+													</li>														
+												</ul>
+											</div>
+										</div>
+
+									</div>
+								</div>	
+							</section>
+							<!-- End price Area -->
+							
+							<!-- End table activitis-->
+						</div>
+						<div class="col-md-6">
+							<!-- Start price Area -->
+							<section class="price-area" style="margin: 2% auto auto auto;">
+								<div class="container">						
+									<div class="single-price">
+										<h4>informacion</h4>
+									</div>
+
+									
+									<div class="single-other-issue">
+										<div class="thumb">
+											<img class="img-fluid" src="assets/img/o1.jpg" alt="">					
+										</div>
+										<a href="#">
+											<h4>Rent a Car</h4>
+										</a>
+										<p>
+											The preservation of human life is the ultimate value, a pillar of ethics and the foundation.
+										</p>
+									</div>
+
+								</div>	
+							</section>
+							<!-- End price Area -->
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<app-nav-activitis></app-nav-activitis>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End section select places -->
+<!-- Footer -->
+<app-footer></app-footer>
+<!-- #Footer -->
