@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+/* AgmCoreModule MAP*/
+import { AgmCoreModule } from '@agm/core';
+
 /* SweetAlert2 */
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
@@ -28,12 +31,13 @@ import { PageLoginComponent } from './login/page-login/page-login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavadminComponent } from './components/header/navadmin/navadmin.component';
 import { NavActivitisComponent } from './components/header/nav-activitis/nav-activitis.component';
+import { PageUniqueplacesComponent } from './pageExternal/page-uniqueplaces/page-uniqueplaces.component';
+import { PageInfoActividadComponent } from './pageExternal/page-info-actividad/page-info-actividad.component';
+import { NavleftadminComponent } from './components/header/navleftadmin/navleftadmin.component';
 
 //servicios - estaticos 
 import { CityService } from './services_statics/city-service';
 import { AuthGuard } from './login/_guards/index';
-import { NavleftadminComponent } from './components/header/navleftadmin/navleftadmin.component';
-import { PageUniqueplacesComponent } from './pageExternal/page-uniqueplaces/page-uniqueplaces.component';
 
 
 
@@ -51,7 +55,8 @@ import { PageUniqueplacesComponent } from './pageExternal/page-uniqueplaces/page
     NavadminComponent,
     NavleftadminComponent,
     PageUniqueplacesComponent,
-    NavActivitisComponent
+    NavActivitisComponent,
+    PageInfoActividadComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,11 @@ import { PageUniqueplacesComponent } from './pageExternal/page-uniqueplaces/page
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyArrFODy5ZCrr0vSzBMCs642oQWugzT2TU',
+      libraries: ["places"]
+    })
   ],
   providers: [
     CityService,

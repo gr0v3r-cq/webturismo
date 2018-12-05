@@ -8,6 +8,7 @@ import { PageAdminComponent } from '../page-admin/page-admin.component';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { PageLoginComponent } from '../login/page-login/page-login.component';
 import { PageUniqueplacesComponent } from '../pageExternal/page-uniqueplaces/page-uniqueplaces.component';
+import { PageInfoActividadComponent } from '../pageExternal/page-info-actividad/page-info-actividad.component';
 
 /* page children */
 import { PageDashboardComponent } from '../page-admin/page-dashboard/page-dashboard.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
       ]
     },
     { path: 'UniquePlacea', component: PageUniqueplacesComponent },
+    { path: 'detalleinformacion/:id/:section/:tipocom', component: PageInfoActividadComponent },
     { path: 'login', component: PageLoginComponent },
     { path: '**', component: NotFoundComponent }
 ];

@@ -1,0 +1,10 @@
+.eventpas {
+	cursor: pointer;
+}
+.eventpas a: hover{
+	cursor: pointer
+}
+
+agm-map {
+  height: 300px;
+}

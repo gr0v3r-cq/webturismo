@@ -58,6 +58,35 @@ export class DataServicieService {
         .catch(this.handleError);
     }
 
+    /*------- listar aventura ------------*/
+    public sp_list_aventura(data:any): Observable<any[]> {
+        const body = { identificador: 'TUR-OBT-AVENTURA-262', parametros: JSON.stringify(data)};
+        return this.http.post(this.url_webservice_motor, body,this.jwt())
+        .map(this.extractProcess)
+        .catch(this.handleError);
+    }
+    /*------- listar Gastronomia ------------*/
+    public sp_list_gastronomia(data:any): Observable<any[]> {
+        const body = { identificador: 'TUR-OBT-GASTRONOMIA-263', parametros: JSON.stringify(data)};
+        return this.http.post(this.url_webservice_motor, body,this.jwt())
+        .map(this.extractProcess)
+        .catch(this.handleError);
+    }
+    /*------- listar Cultura ------------*/
+    public sp_list_cultura(data:any): Observable<any[]> {
+        const body = { identificador: 'TUR-OBT-CULTURA-264', parametros: JSON.stringify(data)};
+        return this.http.post(this.url_webservice_motor, body,this.jwt())
+        .map(this.extractProcess)
+        .catch(this.handleError);
+    }
+    /*------- listar hospedajes ------------*/
+    public sp_list_hospedajes(data:any): Observable<any[]> {
+        const body = { identificador: 'TUR-OBT-HOSPEDAJES-267', parametros: JSON.stringify(data)};
+        return this.http.post(this.url_webservice_motor, body,this.jwt())
+        .map(this.extractProcess)
+        .catch(this.handleError);
+    }
+
     /*----------------- funciones para servicios ------------------*/
     private extractProcess (res: Response) {
   		const body = res.json();

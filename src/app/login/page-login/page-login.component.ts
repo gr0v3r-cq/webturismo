@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { DataServicieService } from '../../_services/data-servicie.service';
 import swal from 'sweetalert2';
 import { Md5 } from "md5-typescript";
 
 /* servicies - statics */
+import { DataServicieService } from '../../_services/data-servicie.service';
 import { CityService } from '../../services_statics/city-service';
 
 
