@@ -17,8 +17,8 @@ export class DataServicieService {
 	private url_webservice_motor = AppSettings.MOTOR_SERVICIOS  + 'reglaNegocio/ejecutarWeb';
 	/***************************************************************************************/
 	constructor(
-			private http: Http
-		) { }
+        private http: Http
+        ) { }
 	/**-----  TOKEN -----**/
     public token(){
     	const body = { usr_usuario: 'administrador', usr_clave: '123456' };
@@ -27,11 +27,11 @@ export class DataServicieService {
     		const user = response.json();
     		if (user.token) {
     			localStorage.setItem('tokenMotor', user.token);
-                    return true;
-                } else {
-                    return false;
-                }
-            });
+                return true;
+            } else {
+                return false;
+            }
+        });
     }
     /*---------------------------------*/
     /*-------------------  Reglas de negocio    -----------------------*/
@@ -39,18 +39,18 @@ export class DataServicieService {
     public sp_insertuser(data:any): Observable<any[]> {
         const body = { identificador: 'TUR-INSERT-USER-258', parametros: JSON.stringify(data)};
         return this.http.post(this.url_webservice_motor, body,this.jwt())
-            .map(this.extractProcess)
-            .catch(this.handleError);
+        .map(this.extractProcess)
+        .catch(this.handleError);
     }
     /*------ login usuarios. -------*/
     public sp_loginuser(data:any): Observable<any[]> {
         const body = { identificador: 'TUR-LOGIN-USER-259', parametros: JSON.stringify(data)};
         return this.http.post(this.url_webservice_motor, body,this.jwt())
-            .map(this.extractProcess)
-            .catch(this.handleError);
+        .map(this.extractProcess)
+        .catch(this.handleError);
     }
 
-     /*-------  listar Naturaleza -------*/
+    /*-------  listar Naturaleza -------*/
     public sp_list_naturaleza(data:any): Observable<any[]> {
         const body = { identificador: 'TUR-OBT-NATURALEZA-261', parametros: JSON.stringify(data)};
         return this.http.post(this.url_webservice_motor, body,this.jwt())
@@ -87,9 +87,33 @@ export class DataServicieService {
         .catch(this.handleError);
     }
 
+    /*--------- Listado de actividades por servicio -------*/
+    public listadoPrmSubServicioXservicio(data:any): Observable<any[]>{
+        const body = { identificador: 'TUR-PSSRV-X-PSRV-LIST-221', parametros: JSON.stringify(data) };
+        return this.http.post(this.url_webservice_motor, body,this.jwt())
+        .map(this.extractProcess)
+        .catch(this.handleError);
+    }
+
+    /*---------------   obtener servicio por sub servicio   --------------------*/
+    public obtenercomercioxservicios(data:any): Observable<any[]>{
+        const body = { identificador: 'TUR-OBT-COMXSERV-237', parametros: JSON.stringify(data) };
+        return this.http.post(this.url_webservice_motor, body,this.jwt())
+        .map(this.extractProcess)
+        .catch(this.handleError);
+    }
+
+    /* OBTENER ACTIVIDAD ECONOMICA POR SERVICIO Y COMERCIO*/
+    public obteneractividadeconomicaporservicioycomercio(data:any): Observable<any[]>{
+        const body = { identificador: 'TUR-ACTIVECO-SERV-COM-240', parametros: JSON.stringify(data) };
+        return this.http.post(this.url_webservice_motor, body,this.jwt())
+        .map(this.extractProcess)
+        .catch(this.handleError);
+    }
+
     /*----------------- funciones para servicios ------------------*/
     private extractProcess (res: Response) {
-  		const body = res.json();
+        const body = res.json();
         //console.log("servicio",body);
         return body;
     }
@@ -105,11 +129,11 @@ export class DataServicieService {
     	}
     	//console.error(errMsg);
     	return Observable.throw(errMsg);
-	}
-	private jwt() {
-		const motorToken = localStorage.getItem('tokenMotor');
-		const headers = new Headers({ 'Authorization': 'Bearer'  + motorToken});
-    	//console.log("cabeceras",headers);
-    	return new RequestOptions({ headers: headers });
-	}
+    }
+    private jwt() {
+        const motorToken = localStorage.getItem('tokenMotor');
+        const headers = new Headers({ 'Authorization': 'Bearer'  + motorToken});
+        //console.log("cabeceras",headers);
+        return new RequestOptions({ headers: headers });
+    }
 }

@@ -34,6 +34,7 @@ import { NavActivitisComponent } from './components/header/nav-activitis/nav-act
 import { PageUniqueplacesComponent } from './pageExternal/page-uniqueplaces/page-uniqueplaces.component';
 import { PageInfoActividadComponent } from './pageExternal/page-info-actividad/page-info-actividad.component';
 import { NavleftadminComponent } from './components/header/navleftadmin/navleftadmin.component';
+import { PageComerciosComponent } from './pageExternal/page-comercios/page-comercios.component';
 
 //servicios - estaticos 
 import { CityService } from './services_statics/city-service';
@@ -56,7 +57,8 @@ import { AuthGuard } from './login/_guards/index';
     NavleftadminComponent,
     PageUniqueplacesComponent,
     NavActivitisComponent,
-    PageInfoActividadComponent
+    PageInfoActividadComponent,
+    PageComerciosComponent
   ],
   imports: [
     BrowserModule,

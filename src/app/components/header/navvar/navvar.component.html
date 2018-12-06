@@ -7,7 +7,7 @@
 			<ul class="nav-menu">
 				<li><a [routerLink]="['/home']">HOME</a></li>
 				<li class="menu-has-children"><a href="">ESTA ES LA PAZ</a>
-					<ul>
+					<ul class="quitmarg">
 						<li><a href="blog-home.html">Geografia</a></li>
 						<li><a href="blog-single.html">Historia</a></li>
 						<li><a href="blog-single.html">Preguntas frecuente</a></li>
@@ -15,18 +15,20 @@
 					</ul>
 				</li>
 				<li class="menu-has-children"><a href="">VISITA LA PAZ</a>
-					<ul>
+					<ul class="quitmarg">
 						<li><a [routerLink]="['/UniquePlacea']">Lugares unicos</a></li>
 						<li><a href="blog-single.html">Turismo por regiones</a></li>
 						<li><a href="blog-single.html">pueblos patrimoni</a></li>
 						<li><a href="blog-single.html">Experiencia única</a></li>
-						<li><a href="blog-single.html">Artesania</a></li>
-						<li><a href="blog-single.html">Gastronomía</a></li>
+						<li><a [routerLink]="['/comercios', 6 ]">Cultura</a></li>
+						<li><a [routerLink]="['/comercios', 4 ]">Aventura</a></li>
+						<li><a [routerLink]="['/comercios', 3 ]">Naturaleza</a></li>
+						<li><a [routerLink]="['/comercios', 5 ]">Gastronomía</a></li>
 					</ul>
 				</li>
 				<li><a href="hotels.html">HOTELES</a></li>
 				<li class="menu-has-children"><a href="">MARCA LA PAZ</a>
-					<ul>
+					<ul class="quitmarg">
 						<li><a href="blog-home.html">¿Quiénes somos?</a>
 							<ul>
 								<li><a href="#">Historia de Marca La Paz</a></li>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 /* servici*/
 import { DataServicieService } from '../../_services/data-servicie.service';
@@ -36,8 +36,14 @@ export class PageInfoActividadComponent implements OnInit {
 	comgoogleweb: any;
 	comtwitterred: any;
 
-	lat: number;
-	lng: number;
+	/* datos mapa */
+	lat: number = -16.4897;
+	lng: number = -68.1193;
+	lat1: number;
+	lng1: number;
+	public latitude: number;
+	public longitude: number;
+	public zoom: number = 8;
 
 
 	constructor(
@@ -45,6 +51,20 @@ export class PageInfoActividadComponent implements OnInit {
 		private route: Router,
 		public httpservicio: DataServicieService
 		) { 
+
+		// override the route reuse strategy
+		this.route.routeReuseStrategy.shouldReuseRoute = function(){
+			return false;
+		}
+		this.route.events.subscribe((evt) => {
+			if (evt instanceof NavigationEnd) {
+				// trick the route into believing it's last link wasn't previously loaded
+				this.route.navigated = false;
+				// if you need to scroll back to top, here is the right place
+				window.scrollTo(0, 0);
+			}
+		});
+		this.firstClick = true; 
 	}
 
 	ngOnInit() {
@@ -92,13 +112,16 @@ export class PageInfoActividadComponent implements OnInit {
 	}
 
 	render(listactividad){
+
+		this.categoriasctividad = [];
+		this.comnombre = listactividad[0].comnombre; //nombre actividad
+		this.com_urlimg = listactividad[0].com_urlimg; // ulr imagen actividad
+
+		/* cordenadas mapa */
 		this.lat = listactividad[0].comlat;
 		this.lng = listactividad[0].comlng;
 
-		this.categoriasctividad = [];
-		this.comnombre = listactividad[0].comnombre;
-		this.com_urlimg = listactividad[0].com_urlimg;
-
+		/* descripcion de actividad */
 		setInterval(() => { 
 			this.renderdescripcion = generarhtml(listactividad[0].comcontenido[0].comdatadescripcion);
 		}, 1000);
@@ -186,9 +209,6 @@ export class PageInfoActividadComponent implements OnInit {
 				this.categoriasctividad.push(listactividad[0].comtipoopcinonescomercio[i]);
 			}
 		}
-
-		console.log(listactividad,3333);
-
 	}
 
 	getAllNaturaleza(){
@@ -287,7 +307,7 @@ export class PageInfoActividadComponent implements OnInit {
 			(data) => {
 				let datos = [];
 				for (var i = 0; i < data.length; i++) {
-					if(data[i].xcom_id == this.id && JSON.parse(data[i].xcom_data).comopcinformacion[0].comidinformacion == this.tipocom == this.tipocom) {
+					if(data[i].xcom_id == this.id && JSON.parse(data[i].xcom_data).comopcinformacion[0].comidinformacion == this.tipocom) {
 						let cadnew = '{"xprmser_id" : "'+data[i].xprmser_id+'", "xprmser_data" : ['+data[i].xprmser_data+'], "xcom_id" : "'+data[i].xcom_id+'",';
 						let nuevaCadena = data[i].xcom_data.replace('{', cadnew);
 						let con = JSON.parse(nuevaCadena);

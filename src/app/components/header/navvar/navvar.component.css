@@ -15,3 +15,7 @@
 }
 
 .selectlanguage:focus{ outline: none;}
+
+.quitmarg{
+	margin: 0 0 0 0;
+}
