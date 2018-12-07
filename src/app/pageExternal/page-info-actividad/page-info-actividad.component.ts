@@ -64,7 +64,6 @@ export class PageInfoActividadComponent implements OnInit {
 				window.scrollTo(0, 0);
 			}
 		});
-		this.firstClick = true; 
 	}
 
 	ngOnInit() {
